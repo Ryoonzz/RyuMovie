@@ -7,41 +7,31 @@ const overlay = document.querySelector("[data-overlay]");
 const navElemArr = [navOpenBtn, navCloseBtn, overlay];
 
 for (let i = 0; i < navElemArr.length; i++) {
-
   navElemArr[i].addEventListener("click", function () {
-
     navbar.classList.toggle("active");
     overlay.classList.toggle("active");
     document.body.classList.toggle("active");
-
   });
-
 }
 
+// search toggle
+const searchTogglers = document.querySelectorAll("[data-search-toggler]");
+const searchBox = document.querySelector("[data-search-box]");
 
+for (let i = 0; i < searchTogglers.length; i++) {
+  searchTogglers[i].addEventListener("click", function () {
+    searchBox.classList.toggle("active");
+  });
+}
 
-/**
- * header sticky
- */
-
+// navbar sticky
 const header = document.querySelector("[data-header]");
-
 window.addEventListener("scroll", function () {
-
   window.scrollY >= 10 ? header.classList.add("active") : header.classList.remove("active");
-
 });
 
-
-
-/**
- * go top
- */
-
+// tombol ke atas
 const goTopBtn = document.querySelector("[data-go-top]");
-
 window.addEventListener("scroll", function () {
-
   window.scrollY >= 500 ? goTopBtn.classList.add("active") : goTopBtn.classList.remove("active");
-
 });

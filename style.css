@@ -631,6 +631,65 @@
   
   .film-teratas .filter-btn:focus::after { right: 0; }
 
+/* search box */
+.search-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 40px;
+  z-index: 6;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.search-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.search-container .input-wrapper {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+}
+
+.search-container .search-field {
+  background-color: transparent;
+  color: var(--white);
+  font-size: 2rem;
+  padding: 20px;
+  padding-inline-end: 60px;
+  border-block-end: 3px solid var(--light-gray);
+  outline: none;
+  transition: var(--transition-2);
+}
+
+.search-container .search-field:focus { border-color: var(--citrine); }
+
+.search-container .search-field::-webkit-search-cancel-button { display: none; }
+
+.search-container .search-submit {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 25px;
+  color: var(--citrine);
+}
+
+.search-container .search-submit ion-icon { --ionicon-stroke-width: 70px; }
+
+.search-container .search-close {
+  position: fixed;
+  inset: 0;
+  cursor: default;
+  z-index: -1;
+}
+
 /* tv series */
 .tv-series {
     background: url("images/tv-series-bg.jpg") no-repeat;
